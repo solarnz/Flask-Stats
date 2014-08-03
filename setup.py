@@ -28,10 +28,8 @@ setup(
     author_email='chris@trotman.io',
     url='https://github.com/solarnz/Flask-Stats',
     packages=[
-        'Flask-Stats',
+        'flask_stats',
     ],
-    package_dir={'Flask-Stats':
-                 'Flask-Stats'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
