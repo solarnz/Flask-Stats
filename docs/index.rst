@@ -1,26 +1,47 @@
-.. complexity documentation master file, created by
-   sphinx-quickstart on Tue Jul  9 22:26:36 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+===========
+Flask-Stats
+===========
 
-Welcome to Flask-Stats's documentation!
-======================================
+.. module:: flask.ext.stats
 
-Contents:
+This flask extension automatically provides paging timing and http status code
+statistics to statsd.
 
-.. toctree::
-   :maxdepth: 2
+It will send page timings to `<APP_NAME>.<BLUEPRINT>.<FUNCTION>`, and status
+codes to `<APP_NAME>.<BLUEPRINT>.<FUNCTION>.http_XXX`, where XXX is the status
+code, i.e 403.
 
-   readme
-   installation
-   usage
-   contributing
-   authors
-   history
+Installation
+------------
 
-Indices and tables
-==================
+Install by installing it from the Python Package Index.
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. code-block:: console
+
+    $ pip install Flask-Stats
+
+Configuration
+-------------
+
+Flask-Stats uses the following configuration values.
+
+.. tabularcolumns:: |p{6.5cm}|p{8.5cm}|
+
+
+=============================== ========================================================
+`STATS_HOSTNAME`                Specifies the host to send statsd values to. Defaults to
+                                localhost.
+`STATS_PORT`                    Specified the port to send statsd values to. Defaults to
+                                8125.
+`STATS_BASE_KEY`                The base key to send the stats to. Defaults to the
+                                application name.
+=============================== ========================================================
+
+
+API Documentation
+-----------------
+
+.. automodule:: flask_stats
+    :members:
+    :undoc-members:
+    :show-inheritance:

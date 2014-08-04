@@ -46,6 +46,10 @@ class Stats(object):
             self.client = None
 
     def init_app(self, app):
+        """Inititialise the extension with the app object.
+
+        :param app: Your application object
+        """
         host = app.config.get('STATS_HOSTNAME', 'localhost')
         port = app.config.get('STATS_PORT', 8125)
         base_key = app.config.get('STATS_BASE_KEY', app.name)

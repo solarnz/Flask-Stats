@@ -40,9 +40,6 @@ coverage:
 	open htmlcov/index.html
 
 docs:
-	rm -f docs/Flask-Stats.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ flask_stats
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 
