@@ -9,7 +9,6 @@ except ImportError:
 
 
 readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'Flask',
@@ -24,7 +23,7 @@ setup(
     name='Flask-Stats',
     version='0.1.0',
     description='A flask plugin to keep stats about your application',
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     author='Chris Trotman',
     author_email='chris@trotman.io',
     url='https://github.com/solarnz/Flask-Stats',
