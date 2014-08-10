@@ -40,6 +40,10 @@ Flask-Stats uses the following configuration values.
 Changelog
 ---------
 
+Todo
+----
+
+- Unit tests
 
 API Documentation
 -----------------
