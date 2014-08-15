@@ -40,6 +40,11 @@ Flask-Stats uses the following configuration values.
 Changelog
 ---------
 
+0.2.0
+~~~~~
+
+- No longer reports timing values for endpoints that don't exist.
+
 Todo
 ----
 

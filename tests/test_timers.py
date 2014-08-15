@@ -21,6 +21,30 @@ class TestAppRoutes(TestStats):
         )
 
 
+class TestAppNonExistentRoute(TestStats):
+    def test_404(self):
+        app = self._create_app('hello')
+
+        stats = Stats().init_app(app)
+
+        pipeline = self._setup_mocks(stats)
+        client = app.test_client()
+        client.get('/hello')
+
+        self.assertFalse(pipeline.timing.called)
+
+    def test_301_to_route_with_slash(self):
+        app = self._create_app('hello')
+
+        stats = Stats().init_app(app)
+
+        pipeline = self._setup_mocks(stats)
+        client = app.test_client()
+        client.get('/slash')
+
+        self.assertFalse(pipeline.timing.called)
+
+
 class TestBlueprintRoutes(TestStats):
     def test_timer(self):
         app = self._create_app('hello')
@@ -37,3 +61,27 @@ class TestBlueprintRoutes(TestStats):
         pipeline.timing.assert_called_once_with(
             'index', TimingValue(0.03 * 1000, 10)
         )
+
+
+class TestBlueprintNonExistentRoute(TestStats):
+    def test_404(self):
+        app = self._create_app('hello')
+
+        stats = Stats().init_app(app)
+
+        pipeline = self._setup_mocks(stats)
+        client = app.test_client()
+        client.get('/blue/hello')
+
+        self.assertFalse(pipeline.timing.called)
+
+    def test_301_to_route_with_slash(self):
+        app = self._create_app('hello')
+
+        stats = Stats().init_app(app)
+
+        pipeline = self._setup_mocks(stats)
+        client = app.test_client()
+        client.get('/blue/slash')
+
+        self.assertFalse(pipeline.timing.called)

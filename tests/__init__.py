@@ -26,6 +26,10 @@ class TestStats(unittest.TestCase):
         def redir():
             return redirect(url_for('other'))
 
+        @app.route('/slash/')
+        def slash():
+            return ''
+
         @app.route('/fail')
         def fail():
             abort(401)
@@ -45,6 +49,10 @@ class TestStats(unittest.TestCase):
         @blueprint.route('/redirect')
         def blueprint_redir():
             return redirect(url_for('other'))
+
+        @blueprint.route('/slash/')
+        def blueprint_slash():
+            return ''
 
         @blueprint.route('/fail')
         def blueprint_fail():

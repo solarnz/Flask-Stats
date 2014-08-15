@@ -3,7 +3,7 @@
 import time
 
 import flask
-from flask import current_app, request
+from flask import request
 from statsd import StatsClient
 
 __author__ = 'Chris Trotman'
@@ -28,7 +28,9 @@ class _StatsClient(StatsClient):
 
         endpoint = str(request.endpoint)
         with self.pipeline() as pipeline:
-            pipeline.timing(endpoint, time_in_ms)
+            if request.endpoint is not None:
+                pipeline.timing(endpoint, time_in_ms)
+
             pipeline.incr(
                 '%s.http_%s' % (endpoint, response.status_code)
             )
