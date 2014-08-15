@@ -2,8 +2,6 @@
 Flask-Stats
 ===========
 
-.. module:: flask.ext.stats
-
 This flask extension automatically provides paging timing and http status code
 statistics to statsd.
 
@@ -24,8 +22,6 @@ Configuration
 -------------
 
 Flask-Stats uses the following configuration values.
-
-.. tabularcolumns:: |p{6.5cm}|p{8.5cm}|
 
 
 =============================== ========================================================
@@ -48,10 +44,4 @@ Changelog
 Todo
 ----
 
-API Documentation
------------------
-
-.. automodule:: flask_stats
-    :members:
-    :undoc-members:
-    :show-inheritance:
+More functionality? What Would you like?
