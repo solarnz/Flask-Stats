@@ -48,8 +48,6 @@ Changelog
 Todo
 ----
 
-- Unit tests
-
 API Documentation
 -----------------
 
