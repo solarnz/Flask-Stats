@@ -62,13 +62,8 @@ class Stats(object):
             prefix=base_key,
         )
 
-        @app.before_request
-        def before_request():
-            client.flask_time_start()
-
-        @app.after_request
-        def after_request(response):
-            return client.flask_time_end(response)
+        app.before_request(client.flask_time_start)
+        app.after_request(client.flask_time_end)
 
         if not hasattr(app, 'extensions'):
             app.extensions = {}

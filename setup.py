@@ -19,7 +19,7 @@ test_requirements = open('requirements-testing.txt').readlines()
 
 setup(
     name='Flask-Stats',
-    version='1.0.0',
+    version='1.0.1',
     description='A flask plugin to keep stats about your application',
     long_description=readme,
     author='Chris Trotman',
