@@ -15,9 +15,7 @@ requirements = [
     'statsd',
 ]
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
+test_requirements = open('requirements-testing.txt').readlines()
 
 setup(
     name='Flask-Stats',
