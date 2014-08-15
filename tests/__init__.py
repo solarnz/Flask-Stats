@@ -37,7 +37,7 @@ class TestStats(unittest.TestCase):
             'index.http_200'
         )
         pipeline.timing.assert_called_once_with(
-            'index', TimingValue(0.03 * 1000, 1)
+            'index', TimingValue(0.03 * 1000, 10)
         )
 
     def test_setup_single_application(self):
@@ -53,7 +53,7 @@ class TestStats(unittest.TestCase):
             'index.http_200'
         )
         pipeline.timing.assert_called_once_with(
-            'index', TimingValue(0.03 * 1000, 1)
+            'index', TimingValue(0.03 * 1000, 10)
         )
 
     def _setup_mocks(self, stats_extension):
